@@ -5,7 +5,7 @@ public class UserValidation {
 
     String firstName, lastName, email, mobileNo, password;
 
-    public void validUserFirstName(String firstName)
+    public boolean validUserFirstName(String firstName)
     {
         this.firstName = firstName;
         String userRegex = "^[A-Z]{1}[A-Za-z0-9]{2}$";
@@ -13,9 +13,11 @@ public class UserValidation {
         Matcher matcher = pattern.matcher(firstName);
 
         if(matcher.matches())
-            System.out.println("User's First Name = "+ firstName +" is matching with the pattern !!!");
+            //System.out.println("User's First Name = "+ firstName +" is matching with the pattern !!!");
+            return true;
         else
-            System.out.println("User's First Name = "+ firstName +" is not matching with the pattern !!!");
+            //System.out.println("User's First Name = "+ firstName +" is not matching with the pattern !!!");
+            return false;
     }
 
     public void validUserLastName(String lastName)
